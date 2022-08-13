@@ -25,7 +25,8 @@ const questions = [
         type: "input",
         message: "Please enter the Usage Information for your program",
         name: "usage",
-
+    },
+    {
         type: "input",
         message: "Please enter the Contribution Guidelines for your program",
         name: "contribution",
@@ -38,7 +39,7 @@ const questions = [
     {
         type: "list",
         message: "Please choose a license for your program",
-        choice: [],
+        choices: ['MIT', 'GNU GPLv3', 'None'],
         name: "license",
     },
     {
@@ -56,7 +57,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-    fs.writeFile('./output/README.md', readMePageContent, (err) => 
+    fs.writeFile('./output/README.md', generateMarkdown(data), (err) => 
     err ? console.log(err) : console.log('Successfully created README.md!') )
 
 
@@ -70,7 +71,7 @@ function init() {
         ...questions
     ])
     .then((response) => {
-        const readMePageContent = generateMarkdown(response);
+        writeToFile(response);
     });
 
 }
