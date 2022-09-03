@@ -30,7 +30,7 @@ To install this application, clone this repository to your machine and open it w
 
 * The completed README file will be generated to: ./output/README.md
 
-[GIF of README DEMO](./assets/README_generator_demo.gif)
+![GIF of README DEMO](./assets/README_generator_demo.gif)
 
 ## **Technologies**
 
